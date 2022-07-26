@@ -47,9 +47,9 @@
                                                              value="<c:out value="${product.getQuantity()}"/>">
                         <label for="">COLOR</label><input type="text" id="color" name="color"
                                                              value="<c:out value="${product.getColor()}"/>">
-                        <label for="">QUANTITY</label><input type="text" id="description" name="description"
+                        <label for="">DESCRIPTION</label><input type="text" id="description" name="description"
                                                              value="<c:out value="${product.getDescription()}"/>">
-                        <label for="">DESCRIPTION</label>
+                        <label for="">CATOGARY</label>
                         <select name="category_id">
                             <c:forEach items="${listCategory}" var="category">
                                 <option value="${category.getId()}">${category.getName()}</option>
