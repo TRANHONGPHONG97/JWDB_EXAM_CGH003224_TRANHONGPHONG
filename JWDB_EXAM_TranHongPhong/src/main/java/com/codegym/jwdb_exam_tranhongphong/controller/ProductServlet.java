@@ -245,7 +245,7 @@ public class ProductServlet extends HttpServlet {
             errors.add("Giá không được để trống!");
         }
         if (quantity.isEmpty()) {
-            errors.add("Số lượng không được  trống!");
+            errors.add("Số lượng không được  trống ");
         }
         if (color.isEmpty()) {
             errors.add("Màu không được để trống!");
@@ -254,10 +254,10 @@ public class ProductServlet extends HttpServlet {
             errors.add("Mô tả không được để trống!");
         }
         if (!isQuantity) {
-            errors.add("Số lượng không đúng định dạng!");
+            errors.add("Số lượng không đúng định dạng (0 < Số lượng < 1000)!");
         }
         if (!isPrice) {
-            errors.add("Giá không đúng định dạng!");
+            errors.add("Giá không đúng định dạng (0< Giá < 100.000.000.000)!");
 
         } else if (errors.size() == 0) {
             product = new Product(id, name, price, quantity, color, description, category_id);
@@ -330,13 +330,13 @@ public class ProductServlet extends HttpServlet {
             errors.add("Mô tả không được để trống!");
         }
         if (!isPrice) {
-            errors.add("Giá không đúng định dạng!");
+            errors.add("Giá không đúng định dạng (0< Giá < 100.000.000.000)!");
         }
         if (quantity.isEmpty()) {
             errors.add("Số lượng không được để trống!");
         }
         if (!isQuantity) {
-            errors.add("Số lượng không đúng định dạng!");
+            errors.add("Số lượng không đúng định dạng (0 < Số lượng < 1000)! ");
         } else if (errors.size() == 0) {
             product = new Product(name, price, quantity, color, description, category_id);
             boolean success = false;

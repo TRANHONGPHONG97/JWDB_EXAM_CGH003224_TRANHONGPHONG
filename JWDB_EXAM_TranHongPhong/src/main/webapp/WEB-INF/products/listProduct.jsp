@@ -47,21 +47,15 @@
     <hr>
     <ul class="app-menu">
 
-        <li><a class="app-menu__item" href="/user_manager"><i class='app-menu__icon bx bx-id-card'></i>
-            <span class="app-menu__label">User Management</span></a></li>
-
         <li><a class="app-menu__item" href="/product"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span
-                class="app-menu__label">Product Management</span></a>
-        </li>
-        <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-task'></i><span
-                class="app-menu__label">Order management</span></a></li>
-        <li><a><img src="/images/anh3.jpg" alt="" style="height: 380px; width: 230px"></a></li>
+                class="app-menu__label">Product Management</span></a></li>
+        <li><a><img src="/images/anhdep.jpg" alt="" style="height: 380px; width: 230px"></a></li>
     </ul>
 </aside>
 <main class="app-content">
     <div class="col-sm-12" style="background-color: chocolate">
         <ul class="app-breadcrumb breadcrumb side" >
-            <li class="breadcrumb-item " ><h3><b>THẾ GIỚI DI ĐỘNG</b></h3></li>
+            <li class="breadcrumb-item " ></li>
         </ul>
         <div id="clock"></div>
     </div>
@@ -78,8 +72,9 @@
                                     class="fas fa-plus"></i>
                                 Add new product</a>
                         </div>
-                        <div class="col-sm-4"></div>
-                        <div class="formm col-sm-5" style="
+                        <div class="col-sm-5"></div>
+                        <div  class="col-sm-1"></div>
+                        <div class="formm col-sm-4" style="
                                            border: 1px solid black; border-radius: 3px; background-color: limegreen;
                                             font-weight: bold">
                             <form action="product" style="padding: 5px;">

@@ -40,15 +40,15 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <label for="">PRODUCT NAME</label><input type="text" id="name" name="name"
-                                                                 value="<c:out value="${product.setName()}"/>">
+                                                                 value="<c:out value="${product.getName()}"/>">
                         <label for="">PRICE</label><input type="text" id="price" name="price"
-                                                          value="<c:out value="${product.setPrice()}"/>">
+                                                          value="<c:out value="${product.getPrice()}"/>">
                         <label for="">QUANTITY</label><input type="text" id="quantity" name="quantity"
-                                                             value="<c:out value="${product.setQuantity()}"/>">
+                                                             value="<c:out value="${product.getQuantity()}"/>">
                         <label for="">COLOR</label><input type="text" id="color" name="color"
-                                                             value="<c:out value="${product.setColor()}"/>">
+                                                             value="<c:out value="${product.getColor()}"/>">
                         <label for="">QUANTITY</label><input type="text" id="description" name="description"
-                                                             value="<c:out value="${product.setDescription()}"/>">
+                                                             value="<c:out value="${product.getDescription()}"/>">
                         <label for="">DESCRIPTION</label>
                         <select name="category_id">
                             <c:forEach items="${listCategory}" var="category">
