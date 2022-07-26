@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../assetss/edit.css">
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <title>Update User</title>
+    <title>EDIT PRODUCT</title>
 </head>
 <body>
 <div class="container">
@@ -23,12 +23,12 @@
             <h1>Edit Product </h1>
         </div>
         <div class="col-sm-4"></div>
-        <div class="col-sm-2 header--right list--right">
-<%--            <a href="/product">--%>
-<%--                <i class="fa-solid fa-list"></i>--%>
-<%--                <span>PRODUCT LIST</span>--%>
-<%--            </a>--%>
-        </div>
+        <%--        <div class="col-sm-2 header--right list--right">--%>
+        <%--            <a href="/product">--%>
+        <%--                <i class="fa-solid fa-list"></i>--%>
+        <%--                <span>PRODUCT LIST</span>--%>
+        <%--            </a>--%>
+        <%--        </div>--%>
     </div>
     <div class="row">
         <div class="col-sm-12 padding-0">
@@ -40,38 +40,33 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <label for="">PRODUCT NAME</label><input type="text" id="name" name="name"
-                                                                 value="<c:out value="${product.getName()}"/>">
+                                                                 value="<c:out value="${product.setName()}"/>">
                         <label for="">PRICE</label><input type="text" id="price" name="price"
-                                                          value="<c:out value="${product.getPrice()}"/>">
+                                                          value="<c:out value="${product.setPrice()}"/>">
                         <label for="">QUANTITY</label><input type="text" id="quantity" name="quantity"
-                                                             value="<c:out value="${product.getQuantity()}"/>">
+                                                             value="<c:out value="${product.setQuantity()}"/>">
                         <label for="">COLOR</label><input type="text" id="color" name="color"
-                                                             value="<c:out value="${product.getQuantity()}"/>">
-                        <label for="">DESCRIPTION</label><input type="text" id="description" name="description"
-                                                             value="<c:out value="${product.getQuantity()}"/>">
-                        <label for="">CATEGORY</label>
+                                                             value="<c:out value="${product.setColor()}"/>">
+                        <label for="">QUANTITY</label><input type="text" id="description" name="description"
+                                                             value="<c:out value="${product.setDescription()}"/>">
+                        <label for="">DESCRIPTION</label>
                         <select name="category_id">
                             <c:forEach items="${listCategory}" var="category">
                                 <option value="${category.getId()}">${category.getName()}</option>
                             </c:forEach>
                         </select>
                         <br>
-                        <%--            <input type="text" id="category_id" name="category_id" value="<c:out value="${product.getCategory_id()}"/>">--%>
-<%--                        <button type="submit">--%>
-<%--                            <i class="fa-solid fa-pen-to-square"></i>--%>
-<%--                            UPDATE--%>
-<%--                        </button>--%>
-                        <div class="col-sm-1"><input type="submit" class="btn btn-info" value="Update">
-                            <div class="col-sm-5"></div>
-                        </div>
-                        <div class="btn-group">
-                            <a href="product" class="btn btn-primary">
-                                <i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Back
-                            </a>
-                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-1"><input type="submit" class="btn btn-info" value="Edit">
+                        <div class="col-sm-5"></div>
+                    </div>
+                    <div class="btn-group">
+                        <a href="product" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Back
+                        </a>
                     </div>
                 </div>
-
             </form>
         </div>
         <div class="footer" style="margin-left: 200px">

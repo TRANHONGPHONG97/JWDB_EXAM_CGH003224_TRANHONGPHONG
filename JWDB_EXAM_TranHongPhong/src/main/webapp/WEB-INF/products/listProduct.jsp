@@ -83,24 +83,24 @@
                                            border: 1px solid black; border-radius: 3px; background-color: limegreen;
                                             font-weight: bold">
                             <form action="product" style="padding: 5px;">
-                                Search: <input placeholder="search" type="text" hint="search" value="${requestScope.q}" name="q"> Filter:
-                                <select name="category_id" id="">
+                                Search: <input placeholder="search" type="text" hint="search" value="${requestScope.q}" name="q">
+<%--                                <select name="category_id" id="">--%>
 
-                                    <option value="-1">All</option>
+<%--                                    <option value="-1">All</option>--%>
 
-                                    <c:forEach items="${applicationScope.listCategory}" var="category">
+<%--                                    <c:forEach items="${applicationScope.listCategory}" var="category">--%>
 
-                                        <c:choose>
-                                            <c:when test="${category.getId() == requestScope.category_id}">
-                                                <option selected value="${category.getId()}">${category.getName()}</option>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <option value="${category.getId()}">${category.getName()}</option>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </c:forEach>
+<%--                                        <c:choose>--%>
+<%--                                            <c:when test="${category.getId() == requestScope.category_id}">--%>
+<%--                                                <option selected value="${category.getId()}">${category.getName()}</option>--%>
+<%--                                            </c:when>--%>
+<%--                                            <c:otherwise>--%>
+<%--                                                <option value="${category.getId()}">${category.getName()}</option>--%>
+<%--                                            </c:otherwise>--%>
+<%--                                        </c:choose>--%>
+<%--                                    </c:forEach>--%>
 
-                                </select>
+<%--                                </select>--%>
                                 <button type="get" class="btn btn-primary"><span class="bi-submit"></span> Submit</button>
                             </form>
                         </div>

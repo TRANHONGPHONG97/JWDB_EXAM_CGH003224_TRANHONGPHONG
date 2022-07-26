@@ -102,7 +102,7 @@ public class ProductServlet extends HttpServlet {
 
     private void listProductPaging(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int page = 1;
-        int recordsPerPage = 3;
+        int recordsPerPage = 5;
         String q = "";
         int category_id = -1;
         if (request.getParameter("q") != null) {

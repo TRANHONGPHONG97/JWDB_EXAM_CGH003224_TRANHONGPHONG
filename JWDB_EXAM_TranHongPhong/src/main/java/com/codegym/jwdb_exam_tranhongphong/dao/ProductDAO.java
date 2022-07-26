@@ -130,7 +130,6 @@ public class ProductDAO implements IProductDAO {
 
         try (Connection connection = MySQLConnUtils.getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_PRODUCT_SQL);) {
-            System.out.println(statement);
             statement.setString(1, product.getName());
             statement.setDouble(2, product.getPrice());
             statement.setInt(3, product.getQuantity());

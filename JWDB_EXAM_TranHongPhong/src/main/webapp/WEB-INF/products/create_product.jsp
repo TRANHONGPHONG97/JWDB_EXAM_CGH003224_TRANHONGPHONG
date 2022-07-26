@@ -40,20 +40,22 @@
                     <div class="col-sm-12">
                         <label>PRODUCT NAME</label><input type="text" name="name" id="name" size="45"
                                                           value="${product.getName() }"/>
-                        <label>PRICE</label><input type="text" name="price" id="price" size="45"
+                        <label>PRICE</label><input type="number" name="price" id="price" size="45"
                                                    value="${product.getPrice() }"/>
-                        <label>QUANTITY</label><input type="text" name="quantity" id="quantity" size="45"
+                        <label>QUANTITY</label><input type="number" name="quantity" id="quantity" size="45"
                                                       value="${product.getQuantity() }"/>
-                        <label>COLOR</label><input type="text" name="color" id="color" size="45"
-                                                   value="${product.getPrice() }"/>
-                        <label>DESCRIPTION</label><input type="text" name="description" id="description" size="45"
-                                                   value="${product.getPrice() }"/>
+                        <label>COLOR</label><input  name="color" id="color" size="45"
+                                                   value="${product.getColor() }"/>
+                        <label>DESCRIPTION</label><input  name="description" id="description" size="45"
+                                                   value="${product.getDescription() }"/>
                         <label>CATEGORY</label>
-                        <select name="category_id">
+                     <select name="category_id">
                             <c:forEach items="${listCategory}" var="category">
                                 <option value="${category.getId()}">${category.getName()}</option>
                             </c:forEach>
                         </select>
+                        <br>
+                        <br>
                     </div>
                     <div class="col-sm-1"><input type="submit" class="btn btn-info" value="Create">
                         <div class="col-sm-5"></div>
