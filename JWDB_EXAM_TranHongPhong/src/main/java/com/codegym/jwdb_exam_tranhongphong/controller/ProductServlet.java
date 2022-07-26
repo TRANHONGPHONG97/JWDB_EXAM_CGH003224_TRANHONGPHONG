@@ -33,10 +33,6 @@ public class ProductServlet extends HttpServlet {
 
     }
 
-//    public int getNoOfRecords() {
-//        return noOfRecords;
-//    }
-
     private String errors = "";
 
     public void init() {
@@ -68,8 +64,6 @@ public class ProductServlet extends HttpServlet {
                     showDeleteForm(req, resp);
                     break;
                 default:
-//                case "list":
-//                    listUser(req, resp);
                     listProductPaging(req, resp);
                     break;
             }
@@ -134,36 +128,7 @@ public class ProductServlet extends HttpServlet {
         productDAO.deleteProduct(id);
         List<Product> list = productDAO.selectAllProduct();
         request.setAttribute("list", list);
-
-
         response.sendRedirect("/product");
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/user_manager");
-//        dispatcher.forward(request, response);
-//        int page = 1;
-//        int recordsPerPage = 3;
-//        String q = "";
-//        int idrole = -1;
-//        if (request.getParameter("q") != null) {
-//            q = request.getParameter("q");
-//        }
-//        if (request.getParameter("idrole") != null) {
-//            idrole = Integer.parseInt(request.getParameter("idrole"));
-//        }
-//        System.out.println(idrole + " tao la role");
-//        if (request.getParameter("page") != null)
-//            page = Integer.parseInt(request.getParameter("page"));
-//        List<User> listUser = userDao.selectUsersPaging((page - 1) * recordsPerPage, recordsPerPage,q, idrole);
-//        int noOfRecords = userDao.getNoOfRecords();
-//        int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
-//
-//        request.setAttribute("list", listUser);
-//        request.setAttribute("noOfPages", noOfPages);
-//        request.setAttribute("currentPage", page);
-//        request.setAttribute("q", q);
-//        request.setAttribute("idrole", idrole);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/listUser.jsp");
-//        dispatcher.forward(request, response);
     }
 
 
@@ -196,27 +161,8 @@ public class ProductServlet extends HttpServlet {
 
     private void updateProduct(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, IOException, ServletException {
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        String name = request.getParameter("name");
-//        String image = request.getParameter("image");
-//        double price = Double.parseDouble(request.getParameter("price"));
-//        int quantity = Integer.parseInt(request.getParameter("quantity"));
-//
-//        int idCategory = Integer.parseInt(request.getParameter("category_id"));
-//        Product product = new Product(id, name, image, price, quantity, idCategory);
-//        productDAO.updateProduct(product);
-////        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/edit_product.jsp");
-////          dispatcher.forward(request, response);
-//        response.sendRedirect("/product");
 
         Product product;
-
-//         String name = req.getParameter("name").trim();
-//        String image = req.getParameter("image").trim();
-//     String price = (req.getParameter("price").trim());
-//       String quantity = (req.getParameter("quantity").trim());
-//        String category_id = String.valueOf(Integer.parseInt(req.getParameter("category_id").trim()));
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/products/edit_product.jsp");
         int id = (Integer.parseInt(req.getParameter("id").trim()));
         String name = req.getParameter("name").trim();
@@ -279,19 +225,6 @@ public class ProductServlet extends HttpServlet {
 
     private void insertProduct(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, IOException, ServletException {
-
-
-//        String name = request.getParameter("name");
-//        String image = request.getParameter("image");
-//       double price = Double.parseDouble(request.getParameter("price"));
-//        int quantity = Integer.parseInt(request.getParameter("quantity"));
-//
-//        int category_id = Integer.parseInt(request.getParameter("category_id"));
-//
-//        Product product = new Product(name, image, price, quantity, category_id);
-//        productDAO.insertProduct(product);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/products/create_product.jsp");
-//        dispatcher.forward(request, response);
 
         Product product;
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/products/create_product.jsp");
@@ -356,90 +289,3 @@ public class ProductServlet extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 }
-
-
-//        response.sendRedirect("/user_manager");
-
-//        Product product = new Product();
-//        boolean flag = true;
-//        Map<String, String> hashMap = new HashMap<String, String>();
-//
-//
-////            product.setId(Integer.parseInt(request.getParameter("id")));
-//            product.setName(request.getParameter("name"));
-//            product.setImage(request.getParameter("image"));
-//            product.setPrice(Double.parseDouble(request.getParameter("price")));
-//            product.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-//            product.setCategory_id(Integer.parseInt(request.getParameter("category_id")));
-
-
-//            ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
-//            Validator validator = validatorFactory.getValidator();
-//            Set<ConstraintViolation<Product>> constraintViolations = validator.validate(product);
-
-//            if (!constraintViolations.isEmpty()) {
-//
-//                errors = "";
-//                // constraintViolations is has error
-//                for (ConstraintViolation<Product> constraintViolation : constraintViolations) {
-//                    errors += "" + constraintViolation.getPropertyPath() + " " + constraintViolation.getMessage()
-//                            + "";
-//                }
-//                errors += "";
-//                request.setAttribute("product", product);
-//                request.setAttribute("errors", errors);
-//                List<Product> productList = productDAO.selectAllProduct();
-//                request.setAttribute("listRole", productList);
-//                request.getRequestDispatcher("/WEB-INF/view/create_product.jsp").forward(request, response);
-//            } else {
-//                if (userDao.selectUserByEmail(email) != null) {
-//                    flag = false;
-//                    hashMap.put("email", "Email exits in database");
-//                    System.out.println(this.getClass() + " Email exits in database");
-//                }
-//                if (userDao.selectUserByUserName(userName) != null) {
-//                    flag = false;
-//                    hashMap.put("user", "UserName exits in database");
-//                    System.out.println(this.getClass() + " User Name exits in database");
-//                }
-//                if (userDao.selectUserByPhone(phone) != null) {
-//                    flag = false;
-//                    hashMap.put("phone", "Phone exits in database");
-//                    System.out.println(this.getClass() + " User Name exits in database");
-//                }
-//                if (iRoleDao.selectRole(idRole) == null) {
-//                    flag = false;
-//                    hashMap.put("user", "Country value invalid");
-//                    System.out.println(this.getClass() + " Country invalid");
-//                }
-//                if (flag) {
-//                    userDao.insertUser(user);
-//                    User u = new User();
-//                    request.setAttribute("user", u);
-//                    request.getRequestDispatcher("WEB-INF/view/create_product.jsp").forward(request, response);
-//                } else {
-//                    errors = "";
-//                    hashMap.forEach(new BiConsumer<String, String>() {
-//                        @Override
-//                        public void accept(String keyError, String valueError) {
-//                            errors += "" + valueError
-//                                    + "";
-//                        }
-//                    });
-//                    errors += "";
-//
-//                    request.setAttribute("user", user);
-//                    request.setAttribute("errors", errors);
-//                    request.getRequestDispatcher("/WEB-INF/view/create_product.jsp").forward(request, response);
-//                }
-//            }
-//        } catch (NumberFormatException ex) {
-//            errors = "";
-//            errors += "" + "Input format not right"
-//                    + "";
-//            errors += "";
-//            request.setAttribute("user", user);
-//            request.setAttribute("errors", errors);
-//            request.getRequestDispatcher("/WEB-INF/view/create_product.jsp").forward(request, response);
-//        } catch (Exception ex) {
-//        }
